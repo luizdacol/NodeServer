@@ -1,0 +1,16 @@
+{
+  "name": "node-server",
+  "version": "1.0.0",
+  "description": "Estudos sobre NodeJs",
+  "main": "index.js",
+  "scripts": {
+    "test": "start",
+    "start": "node index.js"
+  },
+  "author": "Luiz Alencar",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.0",
+    "q": "^1.5.0"
+  }
+}
