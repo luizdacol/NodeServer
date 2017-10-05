@@ -1,26 +1,29 @@
 var app = require('express')();
-var fs = require('fs');
-var jogador = require('./model.js');
+var playerRoutes = require('./Routes/player');
 
 app.use(function(req, res, next){
-    console.log('passou por aqui ' + Date.now());
+    // console.log('passou por aqui ' + (new Date()).toISOString());
+    // console.log('passou por aqui ' + (new Date()).toUTCString());
+    console.log('passou por aqui ' + (new Date()).toLocaleString());
     next();
 })
 
-app.get('/', function(req, res){
-    res.send('Hello World!');
-})
+app.use('/player',playerRoutes);
 
-app.get('/player', function(req, res){
-    var objJogador = jogador();
+// app.get('/', function(req, res){
+//     res.send('Hello World!');
+// })
 
-    objJogador.then(function(value){
-        //res.setHeader('Content-type','application/json');
-        res.send(value);
+// app.get('/player', function(req, res){
+//     var objJogador = jogador();
+
+//     objJogador.then(function(value){
+//         //res.setHeader('Content-type','application/json');
+//         res.send(value);
         
-    });
+//     });
 
-});
+// });
 
 app.listen(3000);
 
